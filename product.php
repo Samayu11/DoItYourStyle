@@ -1,3 +1,10 @@
+<?php
+    include 'service/database.php';
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +71,23 @@
             </div>
 
             <div class="recomnend-product-wrapp">
-                <div class="hat1" data-title="Bowl Hat"
+                <?php foreach($box as $row) :?>
+
+                    <div class="card-product" data-id="<?= $row['id']?>"
+                                              data-title="<?= $row['product'] ?>"
+                                              data-desc="<?= $row['Description'] ?>"  
+                                              data-img="<?= $row['image'] ?>" 
+                                              data-img1="<?= $row['image1'] ?>"
+                                              data-img2="<?= $row['image2'] ?>"
+                                              data-img3="<?= $row['image3'] ?>"
+                                              data-qty="<?= $row['quantity'] ?>"
+                                              data-price="<?= $row['price'] ?>"
+                                              onclick="showModal(this)">
+                        <img src="<?= $row['image'] ?>" width="200px" height="200px" class="card-product-img">
+                    </div>
+
+                    <?php endforeach ;?>
+                <!-- <div class="hat1" data-title="Bowl Hat"
                                   data-desc="Bowl Hat like mafia"
                                   data-img="productIMG/hat1/ha1-front.png"
                                    data-img1="productIMG/hat1/ha1-top.png"
@@ -119,7 +142,7 @@
                       <img src="productIMG/jeans/jeans-front.jpg" alt="jeans" width="200px" height="200px" class="jeans-img" id="jeans-front">
                 </div>
 
-                <div class="shoes" data-title="Sneaker"
+                <div class="shoes" data-title="Sneaker" 
                                   data-desc="Clean senaker for you"
                                   data-img="productIMG/shoes/shoes-front.png"
                                    data-img1="productIMG/shoes/shoes-side.png"
@@ -129,7 +152,7 @@
                                   data-price="$15"
                                   onclick="showModal(this)"> 
                      <img src="productIMG/shoes/shoes-front.png" alt="shoes" width="200px" height="200px" class="shoes-img" id="shoes-front">
-                </div>
+                </div> -->
             </div>
         </div>
 

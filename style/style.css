@@ -404,12 +404,7 @@ body{
 }
 
 
-.hat1,
-.flannel,
-.pants,
-.jacket,
-.jeans,
-.shoes{
+.card-product{
     display: flex;
     flex-direction: column;
     justify-content: start;
